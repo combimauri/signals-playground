@@ -1,0 +1,15 @@
+<p>Todos count: {{ todosCount() }}</p>
+
+<ul>
+  <li *ngFor="let todo of todos()">
+    {{ todo }}
+  </li>
+</ul>
+
+<form
+  #todoForm="ngForm"
+  (ngSubmit)="addTodo(todoInput.value); todoInput.value = ''"
+>
+  <input #todoInput type="text" />
+  <input type="submit" value="Add" />
+</form>
